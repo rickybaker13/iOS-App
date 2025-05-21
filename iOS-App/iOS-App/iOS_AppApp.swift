@@ -6,15 +6,31 @@
 //
 
 import SwiftUI
+import os.log
 
 @main
 struct iOS_AppApp: App {
-    let persistenceController = PersistenceController.shared
-
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "com.yourapp", category: "App")
+    
+    init() {
+        logger.info("App initialization started")
+        do {
+            // Add any initialization code here
+            logger.info("App initialization completed successfully")
+        } catch {
+            logger.error("App initialization failed: \(error.localizedDescription)")
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TestView()
+                .onAppear {
+                    logger.info("TestView appeared")
+                }
+                .onDisappear {
+                    logger.info("TestView disappeared")
+                }
         }
     }
 }
