@@ -9,10 +9,14 @@ import SwiftUI
 
 struct AssignmentsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Upcoming Assignments")
+            .font(.title)
+            .padding()
     }
 }
 
-#Preview {
-    AssignmentsView()
+struct AssignmentsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AssignmentsView()
+    }
 }

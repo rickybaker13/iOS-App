@@ -9,10 +9,14 @@ import SwiftUI
 
 struct StudyMaterialsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Study Materials")
+            .font(.title)
+            .padding()
     }
 }
 
-#Preview {
-    StudyMaterialsView()
+struct StudyMaterialsView_Previews: PreviewProvider {
+    static var previews: some View {
+        StudyMaterialsView()
+    }
 }
