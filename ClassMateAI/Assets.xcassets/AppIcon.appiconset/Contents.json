@@ -1,3 +1,5 @@
+
+
 {
   "images" : [
     {
@@ -13,6 +15,7 @@
     {
       "idiom" : "iphone",
       "scale" : "2x",
+
       "size" : "29x29"
     },
     {
@@ -81,6 +84,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "AppIcon.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
