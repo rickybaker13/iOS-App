@@ -137,7 +137,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1A2B3C4D5E6F788D /* Frameworks */ = {
+		1A2B3C4D5E6F7913 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,9 +247,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A2B3C4D5E6F790B /* Build configuration list for PBXNativeTarget "ClassMateAI" */;
 			buildPhases = (
-				1A2B3C4D5E6F788C /* Sources */,
-				1A2B3C4D5E6F788D /* Frameworks */,
-				1A2B3C4D5E6F788E /* Resources */,
+				1A2B3C4D5E6F7915 /* Sources */,
+				1A2B3C4D5E6F7913 /* Frameworks */,
+				1A2B3C4D5E6F7914 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -294,7 +294,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1A2B3C4D5E6F788E /* Resources */ = {
+		1A2B3C4D5E6F7914 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,7 +306,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1A2B3C4D5E6F788C /* Sources */ = {
+		1A2B3C4D5E6F7915 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
