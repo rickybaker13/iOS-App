@@ -2,11 +2,14 @@ import SwiftUI
 
 struct RecordingView: View {
     @StateObject private var audioRecorder = AudioRecorder()
+    @StateObject private var visualAssistant = VisualLectureAssistant()
     @EnvironmentObject var dataManager: DataManager
     @State private var showingSaveDialog = false
     @State private var showingImportSheet = false
     @State private var lectureTitle = ""
     @State private var selectedSubject: Subject?
+    @State private var showingVisualCapture = false
+    @State private var currentLectureId = UUID()
     
     var body: some View {
         NavigationView {
@@ -58,12 +61,44 @@ struct RecordingView: View {
                         .font(.title)
                         .foregroundColor(.mateText)
                         .padding()
+                    
+                    Button(action: {
+                        showingVisualCapture = true
+                    }) {
+                        HStack {
+                            Image(systemName: "camera.fill")
+                            Text("Capture Lecture Visual")
+                        }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.matePrimary)
+                        .cornerRadius(10)
+                    }
+                    .padding(.horizontal)
                 }
                 
                 if let error = audioRecorder.error {
                     Text(error)
                         .foregroundColor(.red)
                         .padding()
+                }
+                
+                let currentVisuals = visualAssistant.getImagesForLecture(currentLectureId)
+                if !currentVisuals.isEmpty {
+                    HStack {
+                        Image(systemName: "photo.on.rectangle")
+                            .foregroundColor(.matePrimary)
+                        Text("\(currentVisuals.count) visuals captured for this lecture")
+                            .foregroundColor(.mateText)
+                            .font(.subheadline)
+                        Spacer()
+                    }
+                    .padding()
+                    .background(Color.mateSecondary.opacity(0.1))
+                    .cornerRadius(10)
+                    .padding(.horizontal)
                 }
                 
                 // Import Button
@@ -88,18 +123,37 @@ struct RecordingView: View {
             }
             .padding()
             .navigationTitle("Record Lecture")
-            .background(Color.mateBackground)
+            .background(Color.mateCardBackground)
             .sheet(isPresented: $showingSaveDialog) {
                 SaveRecordingView(
                     isPresented: $showingSaveDialog,
                     recordingURL: audioRecorder.recordingURL,
+                    lectureId: currentLectureId,
                     lectureTitle: $lectureTitle,
                     selectedSubject: $selectedSubject,
-                    subjects: dataManager.subjects
+                    pendingImages: visualAssistant.getImagesForLecture(currentLectureId),
+                    onSave: { _ in
+                        currentLectureId = UUID()
+                        showingVisualCapture = false
+                        lectureTitle = ""
+                        selectedSubject = nil
+                    },
+                    onCancel: {
+                        visualAssistant.deleteImages(for: currentLectureId)
+                        currentLectureId = UUID()
+                        showingVisualCapture = false
+                        lectureTitle = ""
+                        selectedSubject = nil
+                    }
                 )
+                .environmentObject(dataManager)
             }
             .sheet(isPresented: $showingImportSheet) {
                 ImportAudioView(isPresented: $showingImportSheet)
+            }
+            .sheet(isPresented: $showingVisualCapture) {
+                VisualCaptureView(lectureId: currentLectureId, visualAssistant: visualAssistant)
+                    .environmentObject(dataManager)
             }
         }
     }

@@ -5,7 +5,9 @@ class AudioPlayer: NSObject, ObservableObject {
     private var player: AVAudioPlayer?
     @Published var isPlaying = false
     @Published var currentTime: TimeInterval = 0
+    @Published var duration: TimeInterval = 0
     @Published var error: String?
+    @Published var isSeeking = false
     
     private var timer: Timer?
     
@@ -34,6 +36,9 @@ class AudioPlayer: NSObject, ObservableObject {
             player?.delegate = self
             player?.prepareToPlay()
             
+            // Set duration
+            duration = player?.duration ?? 0
+            
             // Start playback
             if player?.play() == true {
                 isPlaying = true
@@ -59,13 +64,52 @@ class AudioPlayer: NSObject, ObservableObject {
         player = nil
         isPlaying = false
         currentTime = 0
+        duration = 0
         stopTimer()
+    }
+    
+    func seek(to time: TimeInterval) {
+        guard let player = player else { return }
+        player.currentTime = min(max(0, time), duration)
+        currentTime = player.currentTime
+    }
+    
+    func seekToProgress(_ progress: Double) {
+        let newTime = duration * progress
+        seek(to: newTime)
+    }
+    
+    func fastForward() {
+        guard let player = player else { return }
+        let newTime = min(currentTime + 30, duration)
+        seek(to: newTime)
+    }
+    
+    func rewind() {
+        guard let player = player else { return }
+        let newTime = max(currentTime - 15, 0)
+        seek(to: newTime)
+    }
+    
+    func skipForward() {
+        guard let player = player else { return }
+        let newTime = min(currentTime + 10, duration)
+        seek(to: newTime)
+    }
+    
+    func skipBackward() {
+        guard let player = player else { return }
+        let newTime = max(currentTime - 10, 0)
+        seek(to: newTime)
     }
     
     private func startTimer() {
         stopTimer()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-            self?.currentTime = self?.player?.currentTime ?? 0
+            guard let self = self, let player = self.player else { return }
+            if !self.isSeeking {
+                self.currentTime = player.currentTime
+            }
         }
     }
     
@@ -78,6 +122,15 @@ class AudioPlayer: NSObject, ObservableObject {
         let minutes = Int(time) / 60
         let seconds = Int(time) % 60
         return String(format: "%d:%02d", minutes, seconds)
+    }
+    
+    func formatDuration() -> String {
+        return formatTime(duration)
+    }
+    
+    var progress: Double {
+        guard duration > 0 else { return 0 }
+        return currentTime / duration
     }
 }
 

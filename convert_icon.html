@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .icon-container { margin: 20px 0; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        button { padding: 10px 20px; margin: 5px; background: #007AFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056CC; }
+    </style>
+</head>
+<body>
+    <h1>NoteApp.AI Icon Converter</h1>
+    <p>Click the buttons below to download the app icons in different sizes:</p>
+    
+    <div class="icon-container">
+        <button onclick="downloadIcon(40, 'Icon-20@2x.png')">Download 40x40 (iPhone 20pt @2x)</button>
+        <button onclick="downloadIcon(60, 'Icon-20@3x.png')">Download 60x60 (iPhone 20pt @3x)</button>
+        <button onclick="downloadIcon(58, 'Icon-29@2x.png')">Download 58x58 (iPhone 29pt @2x)</button>
+        <button onclick="downloadIcon(87, 'Icon-29@3x.png')">Download 87x87 (iPhone 29pt @3x)</button>
+        <button onclick="downloadIcon(80, 'Icon-40@2x.png')">Download 80x80 (iPhone 40pt @2x)</button>
+        <button onclick="downloadIcon(120, 'Icon-40@3x.png')">Download 120x120 (iPhone 40pt @3x)</button>
+        <button onclick="downloadIcon(120, 'Icon-60@2x.png')">Download 120x120 (iPhone 60pt @2x)</button>
+        <button onclick="downloadIcon(180, 'Icon-60@3x.png')">Download 180x180 (iPhone 60pt @3x)</button>
+        <button onclick="downloadIcon(20, 'Icon-20.png')">Download 20x20 (iPad 20pt @1x)</button>
+        <button onclick="downloadIcon(29, 'Icon-29.png')">Download 29x29 (iPad 29pt @1x)</button>
+        <button onclick="downloadIcon(40, 'Icon-40.png')">Download 40x40 (iPad 40pt @1x)</button>
+        <button onclick="downloadIcon(152, 'Icon-76@2x.png')">Download 152x152 (iPad 76pt @2x)</button>
+        <button onclick="downloadIcon(167, 'Icon-83.5@2x.png')">Download 167x167 (iPad 83.5pt @2x)</button>
+        <button onclick="downloadIcon(1024, 'Icon-1024.png')">Download 1024x1024 (App Store)</button>
+    </div>
+
+    <div class="icon-container">
+        <h3>Preview:</h3>
+        <canvas id="preview" width="200" height="200"></canvas>
+    </div>
+
+    <script>
+        // SVG content
+        const svgContent = `<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#007AFF" rx="200"/>
+  
+  <!-- Note/Paper icon -->
+  <rect x="200" y="150" width="624" height="724" fill="white" rx="40"/>
+  
+  <!-- Lines on the note -->
+  <rect x="250" y="200" width="524" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="230" width="400" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="260" width="450" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="290" width="380" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="320" width="420" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="350" width="360" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="380" width="440" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="410" width="390" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="440" width="410" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="470" width="370" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="500" width="430" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="530" width="350" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="560" width="460" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="590" width="380" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="620" width="420" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="650" width="400" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="680" width="440" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="710" width="360" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="740" width="430" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="770" width="390" height="8" fill="#007AFF" rx="4"/>
+  <rect x="250" y="800" width="410" height="8" fill="#007AFF" rx="4"/>
+  
+  <!-- AI/Sparkle elements -->
+  <circle cx="750" cy="200" r="15" fill="#FF9500"/>
+  <circle cx="780" cy="230" r="12" fill="#FF9500"/>
+  <circle cx="720" cy="260" r="10" fill="#FF9500"/>
+  <circle cx="760" cy="290" r="8" fill="#FF9500"/>
+  
+  <!-- Pencil icon -->
+  <path d="M 700 850 L 750 800 L 780 830 L 730 880 Z" fill="#FF3B30"/>
+  <rect x="775" y="825" width="20" height="4" fill="#FF3B30" rx="2" transform="rotate(45 785 827)"/>
+</svg>`;
+
+        function downloadIcon(size, filename) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Create image from SVG
+            const img = new Image();
+            const svgBlob = new Blob([svgContent], {type: 'image/svg+xml'});
+            const url = URL.createObjectURL(svgBlob);
+            
+            img.onload = function() {
+                // Draw the image on canvas
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                // Convert to blob and download
+                canvas.toBlob(function(blob) {
+                    const downloadUrl = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = downloadUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(downloadUrl);
+                });
+                
+                URL.revokeObjectURL(url);
+            };
+            
+            img.src = url;
+        }
+
+        // Show preview
+        window.onload = function() {
+            const previewCanvas = document.getElementById('preview');
+            const ctx = previewCanvas.getContext('2d');
+            
+            const img = new Image();
+            const svgBlob = new Blob([svgContent], {type: 'image/svg+xml'});
+            const url = URL.createObjectURL(svgBlob);
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, 200, 200);
+                URL.revokeObjectURL(url);
+            };
+            
+            img.src = url;
+        };
+    </script>
+</body>
+</html> 

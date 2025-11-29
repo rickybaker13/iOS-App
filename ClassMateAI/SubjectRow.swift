@@ -13,7 +13,7 @@ public struct SubjectRow: View {
                 .font(.system(size: 24))
                 .foregroundColor(.matePrimary)
                 .frame(width: 40, height: 40)
-                .background(Color.mateBackground)
+                .background(Color.mateElementBackground)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             
             VStack(alignment: .leading) {

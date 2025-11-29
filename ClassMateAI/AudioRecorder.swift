@@ -11,6 +11,7 @@ class AudioRecorder: NSObject, ObservableObject {
     
     private var timer: Timer?
     private var startTime: Date?
+    private var totalPausedTime: TimeInterval = 0
     
     override init() {
         super.init()
@@ -18,44 +19,13 @@ class AudioRecorder: NSObject, ObservableObject {
     }
     
     private func checkPermissions() {
-        if #available(iOS 17.0, *) {
-            switch AVAudioApplication.shared.recordPermission {
-            case .granted:
-                setupAudioSession()
-            case .denied:
-                error = "Microphone access denied. Please enable it in Settings."
-            case .undetermined:
-                AVAudioApplication.shared.requestRecordPermission { [weak self] granted in
-                    DispatchQueue.main.async {
-                        if granted {
-                            self?.setupAudioSession()
-                        } else {
-                            self?.error = "Microphone access denied"
-                        }
-                    }
+        AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
+            DispatchQueue.main.async {
+                if granted {
+                    self?.setupAudioSession()
+                } else {
+                    self?.error = "Microphone access denied. Please enable it in Settings."
                 }
-            @unknown default:
-                error = "Unknown permission status"
-            }
-        } else {
-            // Fallback for iOS 16 and earlier
-            switch AVAudioSession.sharedInstance().recordPermission {
-            case .granted:
-                setupAudioSession()
-            case .denied:
-                error = "Microphone access denied. Please enable it in Settings."
-            case .undetermined:
-                AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
-                    DispatchQueue.main.async {
-                        if granted {
-                            self?.setupAudioSession()
-                        } else {
-                            self?.error = "Microphone access denied"
-                        }
-                    }
-                }
-            @unknown default:
-                error = "Unknown permission status"
             }
         }
     }
@@ -73,16 +43,9 @@ class AudioRecorder: NSObject, ObservableObject {
     
     func startRecording() {
         // Check if we have permission
-        if #available(iOS 17.0, *) {
-            guard AVAudioApplication.shared.recordPermission == .granted else {
-                error = "Microphone access required"
-                return
-            }
-        } else {
-            guard AVAudioSession.sharedInstance().recordPermission == .granted else {
-                error = "Microphone access required"
-                return
-            }
+        guard AVAudioSession.sharedInstance().recordPermission == .granted else {
+            error = "Microphone access required. Please grant permission in Settings."
+            return
         }
         
         do {
@@ -95,7 +58,7 @@ class AudioRecorder: NSObject, ObservableObject {
             let settings: [String: Any] = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
                 AVSampleRateKey: 44100.0,
-                AVNumberOfChannelsKey: 2,
+                AVNumberOfChannelsKey: 1,
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
                 AVEncoderBitRateKey: 128000
             ]
@@ -110,15 +73,19 @@ class AudioRecorder: NSObject, ObservableObject {
                 isRecording = true
                 isPaused = false
                 recordingTime = 0
+                totalPausedTime = 0
                 startTime = Date()
                 recordingURL = fileURL
                 startTimer()
                 error = nil
+                print("AudioRecorder: Started recording successfully")
             } else {
                 error = "Failed to start recording"
+                print("AudioRecorder: Failed to start recording")
             }
         } catch {
             self.error = "Failed to start recording: \(error.localizedDescription)"
+            print("AudioRecorder: Recording error: \(error)")
         }
     }
     
@@ -126,13 +93,14 @@ class AudioRecorder: NSObject, ObservableObject {
         audioRecorder?.pause()
         isPaused = true
         stopTimer()
+        print("AudioRecorder: Recording paused")
     }
     
     func resumeRecording() {
         if audioRecorder?.record() == true {
             isPaused = false
-            startTime = Date().addingTimeInterval(-recordingTime)
             startTimer()
+            print("AudioRecorder: Recording resumed")
         }
     }
     
@@ -142,13 +110,14 @@ class AudioRecorder: NSObject, ObservableObject {
         isRecording = false
         isPaused = false
         stopTimer()
+        print("AudioRecorder: Recording stopped")
     }
     
     private func startTimer() {
         stopTimer()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             guard let self = self, let startTime = self.startTime else { return }
-            self.recordingTime = Date().timeIntervalSince(startTime)
+            self.recordingTime = Date().timeIntervalSince(startTime) - self.totalPausedTime
         }
     }
     
@@ -169,6 +138,9 @@ extension AudioRecorder: AVAudioRecorderDelegate {
         DispatchQueue.main.async { [weak self] in
             if !flag {
                 self?.error = "Recording failed"
+                print("AudioRecorder: Recording failed")
+            } else {
+                print("AudioRecorder: Recording finished successfully")
             }
             self?.isRecording = false
             self?.stopTimer()
@@ -180,6 +152,7 @@ extension AudioRecorder: AVAudioRecorderDelegate {
             self?.error = "Recording error: \(error?.localizedDescription ?? "Unknown error")"
             self?.isRecording = false
             self?.stopTimer()
+            print("AudioRecorder: Recording error occurred: \(error?.localizedDescription ?? "Unknown error")")
         }
     }
 } 

@@ -31,6 +31,16 @@
 		1A2B3C4D5E6F78BA /* SubjectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78BB /* SubjectRow.swift */; };
 		1A2B3C4D5E6F78BC /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78BD /* ColorScheme.swift */; };
 		1A2B3C4D5E6F78BE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78BF /* Config.swift */; };
+		1A2B3C4D5E6F78C1 /* OpenAITranscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78C2 /* OpenAITranscriptionService.swift */; };
+		1A2B3C4D5E6F78C3 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78C4 /* NotesView.swift */; };
+		1A2B3C4D5E6F78C5 /* OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78C6 /* OutlineView.swift */; };
+		1A2B3C4D5E6F78C7 /* RichTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78C8 /* RichTextEditor.swift */; };
+		1A2B3C4D5E6F78C9 /* TimestampedTranscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78CA /* TimestampedTranscriptionService.swift */; };
+		1A2B3C4D5E6F78CB /* TimestampedNotesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78CC /* TimestampedNotesGenerator.swift */; };
+		1A2B3C4D5E6F78CD /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78CE /* CameraManager.swift */; };
+		1A2B3C4D5E6F78CF /* VisualLectureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D0 /* VisualLectureModels.swift */; };
+		1A2B3C4D5E6F78D1 /* VisualLectureAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D2 /* VisualLectureAssistant.swift */; };
+		1A2B3C4D5E6F78D3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D4 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +70,16 @@
 		1A2B3C4D5E6F78BD /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F78BF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F78C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78C2 /* OpenAITranscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAITranscriptionService.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78C4 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78C6 /* OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78C8 /* RichTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextEditor.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78CA /* TimestampedTranscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampedTranscriptionService.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78CC /* TimestampedNotesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampedNotesGenerator.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78CE /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78D0 /* VisualLectureModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLectureModels.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78D2 /* VisualLectureAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLectureAssistant.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78D4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +135,16 @@
 				1A2B3C4D5E6F78BD /* ColorScheme.swift */,
 				1A2B3C4D5E6F78BF /* Config.swift */,
 				1A2B3C4D5E6F78C0 /* Info.plist */,
+				1A2B3C4D5E6F78C2 /* OpenAITranscriptionService.swift */,
+				1A2B3C4D5E6F78C4 /* NotesView.swift */,
+				1A2B3C4D5E6F78C6 /* OutlineView.swift */,
+				1A2B3C4D5E6F78C8 /* RichTextEditor.swift */,
+				1A2B3C4D5E6F78CA /* TimestampedTranscriptionService.swift */,
+				1A2B3C4D5E6F78CC /* TimestampedNotesGenerator.swift */,
+				1A2B3C4D5E6F78CE /* CameraManager.swift */,
+				1A2B3C4D5E6F78D0 /* VisualLectureModels.swift */,
+				1A2B3C4D5E6F78D2 /* VisualLectureAssistant.swift */,
+				1A2B3C4D5E6F78D4 /* CameraView.swift */,
 				1A2B3C4D5E6F7895 /* Assets.xcassets */,
 				1A2B3C4D5E6F7896 /* Preview Content */,
 			);
@@ -220,6 +250,16 @@
 				1A2B3C4D5E6F78BA /* SubjectRow.swift in Sources */,
 				1A2B3C4D5E6F78BC /* ColorScheme.swift in Sources */,
 				1A2B3C4D5E6F78BE /* Config.swift in Sources */,
+				1A2B3C4D5E6F78C1 /* OpenAITranscriptionService.swift in Sources */,
+				1A2B3C4D5E6F78C3 /* NotesView.swift in Sources */,
+				1A2B3C4D5E6F78C5 /* OutlineView.swift in Sources */,
+				1A2B3C4D5E6F78C7 /* RichTextEditor.swift in Sources */,
+				1A2B3C4D5E6F78C9 /* TimestampedTranscriptionService.swift in Sources */,
+				1A2B3C4D5E6F78CB /* TimestampedNotesGenerator.swift in Sources */,
+				1A2B3C4D5E6F78CD /* CameraManager.swift in Sources */,
+				1A2B3C4D5E6F78CF /* VisualLectureModels.swift in Sources */,
+				1A2B3C4D5E6F78D1 /* VisualLectureAssistant.swift in Sources */,
+				1A2B3C4D5E6F78D3 /* CameraView.swift in Sources */,
 				1A2B3C4D5E6F7890 /* ClassMateAIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
