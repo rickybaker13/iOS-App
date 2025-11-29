@@ -41,6 +41,33 @@
 		1A2B3C4D5E6F78CF /* VisualLectureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D0 /* VisualLectureModels.swift */; };
 		1A2B3C4D5E6F78D1 /* VisualLectureAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D2 /* VisualLectureAssistant.swift */; };
 		1A2B3C4D5E6F78D3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D4 /* CameraView.swift */; };
+		1A2B3C4D5E6F78D5 /* CanvasAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D6 /* CanvasAPIClient.swift */; };
+		1A2B3C4D5E6F78D7 /* CanvasAssignmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78D8 /* CanvasAssignmentDetailView.swift */; };
+		1A2B3C4D5E6F78D9 /* CanvasCourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78DA /* CanvasCourseDetailView.swift */; };
+		1A2B3C4D5E6F78DB /* CanvasCourseManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78DC /* CanvasCourseManageView.swift */; };
+		1A2B3C4D5E6F78DD /* CanvasDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78DE /* CanvasDashboardView.swift */; };
+		1A2B3C4D5E6F78DF /* CanvasModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78E0 /* CanvasModels.swift */; };
+		1A2B3C4D5E6F78E1 /* CanvasReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78E2 /* CanvasReminderScheduler.swift */; };
+		1A2B3C4D5E6F78E3 /* CanvasSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78E4 /* CanvasSyncManager.swift */; };
+		1A2B3C4D5E6F78E5 /* CourseResourceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78E6 /* CourseResourceModels.swift */; };
+		1A2B3C4D5E6F78E7 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78E8 /* DocumentPickerView.swift */; };
+		1A2B3C4D5E6F78E9 /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78EA /* DocumentScannerView.swift */; };
+		1A2B3C4D5E6F78EB /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78EC /* FontExtensions.swift */; };
+		1A2B3C4D5E6F78ED /* InteractiveOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78EE /* InteractiveOnboardingView.swift */; };
+		1A2B3C4D5E6F78EF /* LectureActionsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78F0 /* LectureActionsSectionView.swift */; };
+		1A2B3C4D5E6F78F1 /* LectureAudioSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78F2 /* LectureAudioSectionView.swift */; };
+		1A2B3C4D5E6F78F3 /* LectureFilesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78F4 /* LectureFilesListView.swift */; };
+		1A2B3C4D5E6F78F5 /* LectureMaterialsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78F6 /* LectureMaterialsSectionView.swift */; };
+		1A2B3C4D5E6F78F7 /* LectureResourceImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78F8 /* LectureResourceImportService.swift */; };
+		1A2B3C4D5E6F78F9 /* LectureResourceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78FA /* LectureResourceModels.swift */; };
+		1A2B3C4D5E6F78FB /* LectureResourcesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78FC /* LectureResourcesSectionView.swift */; };
+		1A2B3C4D5E6F78FD /* LectureTranscriptionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F78FE /* LectureTranscriptionSectionView.swift */; };
+		1A2B3C4D5E6F78FF /* LectureVisualsGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7900 /* LectureVisualsGalleryView.swift */; };
+		1A2B3C4D5E6F7901 /* LectureVisualsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7902 /* LectureVisualsSectionView.swift */; };
+		1A2B3C4D5E6F7903 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7904 /* OnboardingView.swift */; };
+		1A2B3C4D5E6F7905 /* ResourceImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7906 /* ResourceImportService.swift */; };
+		1A2B3C4D5E6F7907 /* ResourcePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7908 /* ResourcePreview.swift */; };
+		1A2B3C4D5E6F7909 /* ResourceStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F790A /* ResourceStorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +107,33 @@
 		1A2B3C4D5E6F78D0 /* VisualLectureModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLectureModels.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F78D2 /* VisualLectureAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLectureAssistant.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F78D4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78D6 /* CanvasAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasAPIClient.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78D8 /* CanvasAssignmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasAssignmentDetailView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78DA /* CanvasCourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCourseDetailView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78DC /* CanvasCourseManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCourseManageView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78DE /* CanvasDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasDashboardView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78E0 /* CanvasModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasModels.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78E2 /* CanvasReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasReminderScheduler.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78E4 /* CanvasSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasSyncManager.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78E6 /* CourseResourceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResourceModels.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78E8 /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78EA /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78EC /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78EE /* InteractiveOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveOnboardingView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78F0 /* LectureActionsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureActionsSectionView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78F2 /* LectureAudioSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureAudioSectionView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78F4 /* LectureFilesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureFilesListView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78F6 /* LectureMaterialsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureMaterialsSectionView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78F8 /* LectureResourceImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureResourceImportService.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78FA /* LectureResourceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureResourceModels.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78FC /* LectureResourcesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureResourcesSectionView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F78FE /* LectureTranscriptionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTranscriptionSectionView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7900 /* LectureVisualsGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureVisualsGalleryView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7902 /* LectureVisualsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureVisualsSectionView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7904 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7906 /* ResourceImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceImportService.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7908 /* ResourcePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePreview.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F790A /* ResourceStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +199,33 @@
 				1A2B3C4D5E6F78D0 /* VisualLectureModels.swift */,
 				1A2B3C4D5E6F78D2 /* VisualLectureAssistant.swift */,
 				1A2B3C4D5E6F78D4 /* CameraView.swift */,
+				1A2B3C4D5E6F78D6 /* CanvasAPIClient.swift */,
+				1A2B3C4D5E6F78D8 /* CanvasAssignmentDetailView.swift */,
+				1A2B3C4D5E6F78DA /* CanvasCourseDetailView.swift */,
+				1A2B3C4D5E6F78DC /* CanvasCourseManageView.swift */,
+				1A2B3C4D5E6F78DE /* CanvasDashboardView.swift */,
+				1A2B3C4D5E6F78E0 /* CanvasModels.swift */,
+				1A2B3C4D5E6F78E2 /* CanvasReminderScheduler.swift */,
+				1A2B3C4D5E6F78E4 /* CanvasSyncManager.swift */,
+				1A2B3C4D5E6F78E6 /* CourseResourceModels.swift */,
+				1A2B3C4D5E6F78E8 /* DocumentPickerView.swift */,
+				1A2B3C4D5E6F78EA /* DocumentScannerView.swift */,
+				1A2B3C4D5E6F78EC /* FontExtensions.swift */,
+				1A2B3C4D5E6F78EE /* InteractiveOnboardingView.swift */,
+				1A2B3C4D5E6F78F0 /* LectureActionsSectionView.swift */,
+				1A2B3C4D5E6F78F2 /* LectureAudioSectionView.swift */,
+				1A2B3C4D5E6F78F4 /* LectureFilesListView.swift */,
+				1A2B3C4D5E6F78F6 /* LectureMaterialsSectionView.swift */,
+				1A2B3C4D5E6F78F8 /* LectureResourceImportService.swift */,
+				1A2B3C4D5E6F78FA /* LectureResourceModels.swift */,
+				1A2B3C4D5E6F78FC /* LectureResourcesSectionView.swift */,
+				1A2B3C4D5E6F78FE /* LectureTranscriptionSectionView.swift */,
+				1A2B3C4D5E6F7900 /* LectureVisualsGalleryView.swift */,
+				1A2B3C4D5E6F7902 /* LectureVisualsSectionView.swift */,
+				1A2B3C4D5E6F7904 /* OnboardingView.swift */,
+				1A2B3C4D5E6F7906 /* ResourceImportService.swift */,
+				1A2B3C4D5E6F7908 /* ResourcePreview.swift */,
+				1A2B3C4D5E6F790A /* ResourceStorageService.swift */,
 				1A2B3C4D5E6F7895 /* Assets.xcassets */,
 				1A2B3C4D5E6F7896 /* Preview Content */,
 			);
@@ -260,6 +341,33 @@
 				1A2B3C4D5E6F78CF /* VisualLectureModels.swift in Sources */,
 				1A2B3C4D5E6F78D1 /* VisualLectureAssistant.swift in Sources */,
 				1A2B3C4D5E6F78D3 /* CameraView.swift in Sources */,
+				1A2B3C4D5E6F78D5 /* CanvasAPIClient.swift in Sources */,
+				1A2B3C4D5E6F78D7 /* CanvasAssignmentDetailView.swift in Sources */,
+				1A2B3C4D5E6F78D9 /* CanvasCourseDetailView.swift in Sources */,
+				1A2B3C4D5E6F78DB /* CanvasCourseManageView.swift in Sources */,
+				1A2B3C4D5E6F78DD /* CanvasDashboardView.swift in Sources */,
+				1A2B3C4D5E6F78DF /* CanvasModels.swift in Sources */,
+				1A2B3C4D5E6F78E1 /* CanvasReminderScheduler.swift in Sources */,
+				1A2B3C4D5E6F78E3 /* CanvasSyncManager.swift in Sources */,
+				1A2B3C4D5E6F78E5 /* CourseResourceModels.swift in Sources */,
+				1A2B3C4D5E6F78E7 /* DocumentPickerView.swift in Sources */,
+				1A2B3C4D5E6F78E9 /* DocumentScannerView.swift in Sources */,
+				1A2B3C4D5E6F78EB /* FontExtensions.swift in Sources */,
+				1A2B3C4D5E6F78ED /* InteractiveOnboardingView.swift in Sources */,
+				1A2B3C4D5E6F78EF /* LectureActionsSectionView.swift in Sources */,
+				1A2B3C4D5E6F78F1 /* LectureAudioSectionView.swift in Sources */,
+				1A2B3C4D5E6F78F3 /* LectureFilesListView.swift in Sources */,
+				1A2B3C4D5E6F78F5 /* LectureMaterialsSectionView.swift in Sources */,
+				1A2B3C4D5E6F78F7 /* LectureResourceImportService.swift in Sources */,
+				1A2B3C4D5E6F78F9 /* LectureResourceModels.swift in Sources */,
+				1A2B3C4D5E6F78FB /* LectureResourcesSectionView.swift in Sources */,
+				1A2B3C4D5E6F78FD /* LectureTranscriptionSectionView.swift in Sources */,
+				1A2B3C4D5E6F78FF /* LectureVisualsGalleryView.swift in Sources */,
+				1A2B3C4D5E6F7901 /* LectureVisualsSectionView.swift in Sources */,
+				1A2B3C4D5E6F7903 /* OnboardingView.swift in Sources */,
+				1A2B3C4D5E6F7905 /* ResourceImportService.swift in Sources */,
+				1A2B3C4D5E6F7907 /* ResourcePreview.swift in Sources */,
+				1A2B3C4D5E6F7909 /* ResourceStorageService.swift in Sources */,
 				1A2B3C4D5E6F7890 /* ClassMateAIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
