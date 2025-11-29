@@ -245,7 +245,7 @@
 /* Begin PBXNativeTarget section */
 		1A2B3C4D5E6F788F /* ClassMateAI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A2B3C4D5E6F78C3 /* Build configuration list for PBXNativeTarget "ClassMateAI" */;
+			buildConfigurationList = 1A2B3C4D5E6F790B /* Build configuration list for PBXNativeTarget "ClassMateAI" */;
 			buildPhases = (
 				1A2B3C4D5E6F788C /* Sources */,
 				1A2B3C4D5E6F788D /* Frameworks */,
@@ -375,7 +375,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1A2B3C4D5E6F78C1 /* Debug */ = {
+		1A2B3C4D5E6F790C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -438,7 +438,7 @@
 			};
 			name = Debug;
 		};
-		1A2B3C4D5E6F78C2 /* Release */ = {
+		1A2B3C4D5E6F790D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -494,7 +494,7 @@
 			};
 			name = Release;
 		};
-		1A2B3C4D5E6F78C4 /* Debug */ = {
+		1A2B3C4D5E6F790E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -525,7 +525,7 @@
 			};
 			name = Debug;
 		};
-		1A2B3C4D5E6F78C5 /* Release */ = {
+		1A2B3C4D5E6F790F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -562,17 +562,17 @@
 		1A2B3C4D5E6F788B /* Build configuration list for PBXProject "ClassMateAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A2B3C4D5E6F78C1 /* Debug */,
-				1A2B3C4D5E6F78C2 /* Release */,
+				1A2B3C4D5E6F790C /* Debug */,
+				1A2B3C4D5E6F790D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A2B3C4D5E6F78C3 /* Build configuration list for PBXNativeTarget "ClassMateAI" */ = {
+		1A2B3C4D5E6F790B /* Build configuration list for PBXNativeTarget "ClassMateAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A2B3C4D5E6F78C4 /* Debug */,
-				1A2B3C4D5E6F78C5 /* Release */,
+				1A2B3C4D5E6F790E /* Debug */,
+				1A2B3C4D5E6F790F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
