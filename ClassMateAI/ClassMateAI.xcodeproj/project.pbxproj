@@ -150,12 +150,12 @@
 		1A2B3C4D5E6F7887 = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F7892 /* ClassMateAI */,
-				1A2B3C4D5E6F7891 /* Products */,
+				1A2B3C4D5E6F7910 /* ClassMateAI */,
+				1A2B3C4D5E6F7911 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1A2B3C4D5E6F7891 /* Products */ = {
+		1A2B3C4D5E6F7911 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F7890 /* ClassMateAI.app */,
@@ -163,7 +163,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A2B3C4D5E6F7892 /* ClassMateAI */ = {
+		1A2B3C4D5E6F7910 /* ClassMateAI */ = {
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F7891 /* ClassMateAIApp.swift */,
@@ -227,12 +227,12 @@
 				1A2B3C4D5E6F7908 /* ResourcePreview.swift */,
 				1A2B3C4D5E6F790A /* ResourceStorageService.swift */,
 				1A2B3C4D5E6F7895 /* Assets.xcassets */,
-				1A2B3C4D5E6F7896 /* Preview Content */,
+				1A2B3C4D5E6F7912 /* Preview Content */,
 			);
 			path = ClassMateAI;
 			sourceTree = "<group>";
 		};
-		1A2B3C4D5E6F7896 /* Preview Content */ = {
+		1A2B3C4D5E6F7912 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F7897 /* Preview Assets.xcassets */,
@@ -284,7 +284,7 @@
 				Base,
 			);
 			mainGroup = 1A2B3C4D5E6F7887;
-			productRefGroup = 1A2B3C4D5E6F7891 /* Products */;
+			productRefGroup = 1A2B3C4D5E6F7911 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
